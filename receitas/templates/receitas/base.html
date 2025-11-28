@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Livro de Receitas Virtual{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'receitas/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Livro de Receitas Virtual</h1>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="rodape">
+        <hr>
+        <p>© 2025 Meu Livro de Receitas Virtual</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{
+    background-color: antiquewhite;
+}
+header{
+    text-align: center;
+    
+}
+main{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+.rodape{
+    text-align: left;
+    bottom: 0px;
+
+}

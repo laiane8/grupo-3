@@ -1,0 +1,21 @@
+{% extends 'receitas/base.html' %}
+
+{% block title %}Receitas de Família{% endblock %}
+
+{% block content %}
+    <h1>Receitas de Família</h1>
+
+    {% for post in posts %}
+        <article>
+            <h2>
+                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+            </h2>
+            <p><em>{{ post.published_date }}</em></p>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <hr>
+        </article>
+    {% empty %}
+        <p>Nenhuma receita disponível ainda.</p>
+    {% endfor %}
+{% endblock %}
+
