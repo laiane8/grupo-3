@@ -1,17 +1,11 @@
 from django.db import models
-from django.utils import timezone
 
-
-class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+class Receita(models.Model):
+    titulo = models.CharField(max_length=200)
+    ingredientes = models.TextField()
+    modo_preparo = models.TextField()
+    imagem = models.ImageField(upload_to='receitas_fotos/')
+    criado_em = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.titulo

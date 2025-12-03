@@ -1,0 +1,12 @@
+{% extends 'receitas/base.html' %}
+
+{% block content %}
+<h2>Criar nova receita</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar receita</button>
+</form>
+
+{% endblock %}

@@ -1,25 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Livro de Receitas Virtual{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'receitas/estilos.css' %}">
+    <meta charset="UTF-8">
+    <title>Livro de Receitas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <style>
+    .caixa {
+    width: 600px;
+    height: 650px;
+    background-color: antiquewhite;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;  
+        align-items: center;      
+    }
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>Livro de Receitas Virtual</h1>
-        <hr>
+        <div>
+        <h1 ><a href="{% url 'lista_receitas' %}">Livro de Receitas</a></h1>
+        <nav>
+            <a href="{% url 'criar_receita' %}">Criar Nova Receita</a>
+        </nav>
+    </style>
     </header>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <hr>
 
-    <footer class="rodape">
-        <hr>
-        <p>© 2025 Meu Livro de Receitas Virtual</p>
-    </footer>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

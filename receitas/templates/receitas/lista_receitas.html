@@ -1,0 +1,28 @@
+{% extends 'receitas/base.html' %}
+
+{% block content %}
+
+
+<h2>Receitas</h2>
+
+{% for r in receitas %}
+<div class="container">
+    <div class="caixa">
+        <h3>{{ r.titulo }}</h3>
+
+        {% if r.imagem %}
+            <img src="{{ r.imagem.url }}" alt="{{ r.titulo }}" width="200">
+        {% else %}
+            <p>(Sem imagem)</p>
+        {% endif %}
+
+        <p><strong>Ingredientes:</strong></p>
+        <p>{{ r.ingredientes }}</p>
+
+        <p><strong>Modo de preparo:</strong></p>
+        <p>{{ r.modo_preparo }}</p>
+
+        <hr>
+    </div>
+{% endfor %}
+{% endblock %}
