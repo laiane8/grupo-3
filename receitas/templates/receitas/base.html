@@ -3,32 +3,72 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Livro de Receitas</title>
+    <title>Livro de Receitas Virtual</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     .caixa {
     width: 600px;
-    height: 650px;
+    height: 90%;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 2px solid #000000ff;
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
+    flex-direction: column;
     }
     .container {
         display: flex;
         justify-content: center;  
-        align-items: center;      
+        align-items: center;
+        flex-direction: column;
+    }
+    .botao{
+        background-color: #a0691bff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        color: antiquewhite;
+        margin: 20px;
+    }
+    .titulo{
+        font-family: 'Playfair Display', Georgia, serif;
+        color: #a0691bff;
+        text-decoration: none;
+        margin: 50px;
+        cursor: pointer;
+        text-align:center;
+        font-size: 60px;
     }
 
+    .t2{
+        background-color: #a0691bff;
+        width: 100%;
+        text-align:center;
+        padding: 30px;
+        color: antiquewhite;
+        margin: 0px;
+        font-size: 40px;
+    }
+    hr{
+        margin: 20px;
+    }
+    body{
+        background-image: url("{% static 'receitas/img/fundo-site.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
     </style>
 </head>
 <body>
     <header>
-        <div>
-        <h1 ><a href="{% url 'lista_receitas' %}">Livro de Receitas</a></h1>
+        <h1 class="titulo">Livro de Receitas Virtual</h1>
         <nav>
-            <a href="{% url 'criar_receita' %}">Criar Nova Receita</a>
+            <a href="{% url 'criar_receita' %}"; class="botao">Criar Nova Receita</a>
         </nav>
     </style>
     </header>
